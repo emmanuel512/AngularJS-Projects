@@ -5,11 +5,9 @@
 	<head>
 		<title>Weather Dashboard</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">  
-		<link rel="stylesheet" type="text/css" href="css/weather-icons.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 		<script src="js/myApp.js"></script>
 		<script src="js/forecastControl.js"></script>
-		<script src="js/factory.js"></script>
 		<script src="https://code.angularjs.org/1.5.8/angular-sanitize.min.js"></script>
 	</head>
 	<body ng-app="weatherApp">
@@ -17,28 +15,20 @@
 		<hr/>
 		<div ng-controller="forecastControl">
 			<div align="center">
-				<input id="Search" type="text" placeholder="Enter a Location" ng-model="cityID" ng-model-options="{debounce: 350}">
+				<input id="Search" type="text" placeholder="Enter a City" ng-model="cityID" ng-model-options="{debounce: 350}">
 			</div>
 			<h3 class="currentCity">Current City: </h3>	
 			<p id="cCity">{{cCity}}</p>	
-			<h3 class="CTemp">Current Temp and Condition: </h3>
-			<p id="CTempResult">{{currentDay}} - {{currentTemp}} &#8457 <br/><br/> {{currentSum}}</p>
-			<h3 class="sevDay">7 Day Forecast:</h3>
+			<h3 class="CTemp">Current Temp:</h3>
+			<p id="CTempResult">{{currentDay}} - {{currentTemp}} &#8457</p>
+			<h3 class="sevDay">6 Day Forecast:</h3>
 			<div id=sevDayResult>	
 				<p>{{day1}} - Max Temp: {{d1maxTemp}} &#8457, Min Temp: {{d1minTemp}} &#8457</p>
-				<p>{{d1summary}}</p>
 				<p>{{day2}} - Max Temp: {{d2maxTemp}} &#8457, Min Temp: {{d2minTemp}} &#8457</p>
-				<p>{{d2summary}}</p>
 				<p>{{day3}} - Max Temp: {{d3maxTemp}} &#8457, Min Temp: {{d3minTemp}} &#8457</p>
-				<p>{{d3summary}}</p>
 				<p>{{day4}} - Max Temp: {{d4maxTemp}} &#8457, Min Temp: {{d4minTemp}} &#8457</p>
-				<p>{{d4summary}}</p>
 				<p>{{day5}} - Max Temp: {{d5maxTemp}} &#8457, Min Temp: {{d5minTemp}} &#8457</p>
-				<p>{{d5summary}}</p>
 				<p>{{day6}} - Max Temp: {{d6maxTemp}} &#8457, Min Temp: {{d6minTemp}} &#8457</p>
-				<p>{{d6summary}}</p>
-				<p>{{day7}} - Max Temp: {{d7maxTemp}} &#8457, Min Temp: {{d7minTemp}} &#8457</p>
-				<p>{{d7summary}}</p>
 			</div>
 			<br/>
 			<div align="center">
